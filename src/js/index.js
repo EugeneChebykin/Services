@@ -45,9 +45,6 @@ function bindSliders() {
 
     let sliderConf = {
         slidesPerView: 'auto',
-        pagination: {
-            el: '.swiper-pagination'
-        }
     };
 
 
@@ -56,9 +53,21 @@ function bindSliders() {
     }
 
     if(window.innerWidth <= 768) {
-        let brandsNavSlider = new Swiper(brandsNav, sliderConf);
-        let devicesNavSlider = new Swiper(devicesNav, sliderConf);
-        let tableRowsSlider = new Swiper(tableRows, sliderConf);
+        let brandsNavSlider = new Swiper(brandsNav, Object.assign(sliderConf, {
+            pagination: {
+                el: '.brands__pagination'
+            }
+        }));
+        let devicesNavSlider = new Swiper(devicesNav, Object.assign(sliderConf, {
+            pagination: {
+                el: '.devices__pagination'
+            }
+        }));
+        let tableRowsSlider = new Swiper(tableRows, Object.assign(sliderConf, {
+            pagination: {
+                el: '.prices__pagination'
+            }
+        }));
     }
 }
 

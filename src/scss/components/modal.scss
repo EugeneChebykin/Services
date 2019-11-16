@@ -1,32 +1,36 @@
 .modal-navbar {
     position: absolute;
     left: 0;
-    transition: .25s;
-    left: -150%;
+    transition: all .35s;
+    transform-origin: left center;
+    transform: translateX(-100%);
     opacity: 0;
     z-index: 100;
     &--active{
         position: fixed;
-        left: 0;
+        transform-origin: left center;
+        transform: translateX(0);
         opacity: 1;
         box-shadow: 
-        16px 0px 52px rgba(14, 24, 80, 0.2), 
-        -2px 0px 4px rgba(69, 79, 126, 0.02);
+            16px 0px 52px rgba(14, 24, 80, 0.2), 
+            -2px 0px 4px rgba(69, 79, 126, 0.02);
     }
 }
 
 .modal-right-group {
     position: absolute;
-    transition: .25s;
+    transition: all .35s;
+    transform-origin: right center;
+    transform: translateX(100%);
     opacity: 0;
-    right: -150%;
     z-index: 100;
     &--active{
         position: fixed;
-        right: 0;
+        transform-origin: right center;
+        transform: translateX(0);
         opacity: 1;
         box-shadow: 
-        16px 0px 52px rgba(14, 24, 80, 0.2), 
-        -2px 0px 4px rgba(69, 79, 126, 0.02);
+            16px 0px 52px rgba(14, 24, 80, 0.2), 
+            -2px 0px 4px rgba(69, 79, 126, 0.02);
     }
 }

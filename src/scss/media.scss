@@ -36,9 +36,12 @@
     .form__close {
         position: static;
     }
-
     .brands__slider, .devices__slider {
         height: auto;
+    }
+    .links__item {
+        margin: 0.5em 0;
+        margin-left: -$navbar-padding;
     }
 
     .table {
