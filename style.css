@@ -501,13 +501,13 @@ template {
   .navbar__content {
     flex-grow: 0.5; }
   .navbar__email {
-    margin: 2em 0;
+    margin: 1.5em 0;
     font-weight: 500; }
   .navbar__phone {
     font-weight: bold;
     font-size: 1.5em; }
   .navbar__langs {
-    margin-top: 3em; }
+    margin-top: 1.5em; }
 
 .top-menu {
   display: none;
@@ -758,7 +758,8 @@ template {
     flex-grow: 1; }
 
 .form {
-  position: relative;
+  position: absolute;
+  right: 0;
   min-width: 320px;
   min-height: 100%;
   background-color: white;
@@ -795,25 +796,29 @@ template {
 .modal-navbar {
   position: absolute;
   left: 0;
-  transition: .25s;
-  left: -150%;
+  transition: all .35s;
+  transform-origin: left center;
+  transform: translateX(-100%);
   opacity: 0;
   z-index: 100; }
   .modal-navbar--active {
     position: fixed;
-    left: 0;
+    transform-origin: left center;
+    transform: translateX(0);
     opacity: 1;
     box-shadow: 16px 0px 52px rgba(14, 24, 80, 0.2), -2px 0px 4px rgba(69, 79, 126, 0.02); }
 
 .modal-right-group {
   position: absolute;
-  transition: .25s;
+  transition: all .35s;
+  transform-origin: right center;
+  transform: translateX(100%);
   opacity: 0;
-  right: -150%;
   z-index: 100; }
   .modal-right-group--active {
     position: fixed;
-    right: 0;
+    transform-origin: right center;
+    transform: translateX(0);
     opacity: 1;
     box-shadow: 16px 0px 52px rgba(14, 24, 80, 0.2), -2px 0px 4px rgba(69, 79, 126, 0.02); }
 
@@ -843,6 +848,9 @@ template {
     position: static; }
   .brands__slider, .devices__slider {
     height: auto; }
+  .links__item {
+    margin: 0.5em 0;
+    margin-left: -1.5em; }
   .table {
     display: flex;
     max-width: 70vw; }
@@ -936,8 +944,7 @@ ul {
   list-style: none; }
 
 img {
-  max-width: 100%;
-  max-height: 100%; }
+  max-width: 100%; }
 
 button {
   border: none; }
