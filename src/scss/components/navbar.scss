@@ -1,0 +1,117 @@
+.links {
+    margin: 1.5em 0;
+    font-weight: 500;
+    &__item {
+        display: flex;
+        align-items: center;
+        height: 2em;
+        margin: 1em 0;
+        margin-left: -$navbar-padding;
+        padding-left: $navbar-padding;
+        border-left: 4px solid white;
+        &-active {
+            color: lighten($text-color, 50%);
+            border-left: 4px solid $blue-color;
+        }
+        &:hover {
+            border-left: 4px solid $blue-color;
+        }
+    }
+}
+
+.langs-list {
+    font-weight: 500;
+    text-transform: uppercase;
+
+    &__item {
+        &-active {
+            color: lighten($text-color, 50%)
+        }
+    }
+}
+
+.navbar {
+    position: relative;
+    min-width: 320px;
+    min-height: 100%;
+    background-color: white;
+
+    &__container {
+        display: flex;
+        padding: $navbar-padding;
+        flex-direction: column;
+        position: fixed;
+        height: 100vh;
+        min-width: 320px;
+    }
+
+    &__search {
+        display: flex;
+        align-items: center;
+        padding: 2px;
+        overflow: hidden;
+        position: relative;
+        border-radius: 50px;
+        position: absolute;
+        right: 1em;
+    }
+
+    &__text {
+        border: 2px solid $icon-color;
+        padding: 3px;
+        margin-right: -40px;
+        width: 250px;
+        height: 40px;
+        border-radius: 50px;
+        transition: .25s;
+        transform-origin: right center;
+        transform: translateX(100%);
+        opacity: 0;
+        &--active{
+            transform: translateX(0%);
+            opacity: 1
+        }
+    }
+    &__search-button {
+        z-index: 100;
+    }
+
+    &__close {
+        display: none;
+        margin-right: 1em;
+    }
+
+    &__icon {
+        &:not(:first-of-type):not(:last-of-type) {
+            margin: 0 0.7em;
+        }
+    }
+
+    &__header {
+        display: flex;
+        align-items: center;
+    }
+
+    &__logo {
+        flex-grow: 1;
+        //padding-left: 1em;
+    }
+
+    &__content {
+        flex-grow: 0.5;
+    }
+
+    &__email {
+        margin: 2em 0;
+        font-weight: 500;
+    }
+
+    &__phone {
+        font-weight: bold;
+        font-size: 1.5em;
+    }
+
+    &__langs {
+        margin-top: 3em;
+    }
+}

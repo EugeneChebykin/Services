@@ -1,0 +1,58 @@
+.prices {
+    padding: $content-padding;
+    overflow: hidden;
+    &__footer {
+        max-width: 50%;
+        margin: 1.5em 0;
+    }
+    &__pagination {
+        position: static;
+        display: block;
+        margin-top: 1em;
+    }
+    &__link {
+        font-size: 1.1em;
+        font-weight: 500;
+        display: block;
+        margin-top: 1em;
+    }
+}
+
+.table {
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+    &__header {
+        display: table-header-group;
+    }
+
+    &__body {
+        display: table-row-group;
+        height: 100%;
+    }
+    &__row {
+        position: relative;
+        display: table-row;
+        background-color: white;
+        width: 5px;
+    }
+    &__title {
+        display: table-cell;
+        font-weight: normal;
+        color: $light-gray-color;
+        padding: 20px;
+        text-align: left;
+    }
+    &__cell {
+        display: table-cell;
+        position: relative;
+        padding: 20px;
+        border-bottom: 3px solid $page-bg-color;
+        &::before {
+            content: attr(data-header);
+            display: block;
+            color: $light-gray-color;
+            margin-bottom: 0.5em;
+        }
+    }
+}

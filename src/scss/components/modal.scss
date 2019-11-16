@@ -1,0 +1,32 @@
+.modal-navbar {
+    position: absolute;
+    left: 0;
+    transition: .25s;
+    left: -150%;
+    opacity: 0;
+    z-index: 100;
+    &--active{
+        position: fixed;
+        left: 0;
+        opacity: 1;
+        box-shadow: 
+        16px 0px 52px rgba(14, 24, 80, 0.2), 
+        -2px 0px 4px rgba(69, 79, 126, 0.02);
+    }
+}
+
+.modal-right-group {
+    position: absolute;
+    transition: .25s;
+    opacity: 0;
+    right: -150%;
+    z-index: 100;
+    &--active{
+        position: fixed;
+        right: 0;
+        opacity: 1;
+        box-shadow: 
+        16px 0px 52px rgba(14, 24, 80, 0.2), 
+        -2px 0px 4px rgba(69, 79, 126, 0.02);
+    }
+}

@@ -1,0 +1,12 @@
+.footer {
+    padding: $content-padding;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    &__item {
+        color: $light-gray-color;
+        max-width: 300px;
+        margin-bottom: 1em;
+        flex-grow: 1;
+    }
+}

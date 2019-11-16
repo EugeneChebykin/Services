@@ -1,0 +1,133 @@
+@media only screen and (max-width : 1120px){
+    .navbar {
+        &__close {
+            display: block;
+        }
+    }
+    .top-menu {
+        display: flex;
+    }
+    .services__icons {
+        display: none;
+    }
+    .prices__footer {
+        max-width: 100%;
+    }
+}
+
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 767px){
+    body {
+        font-size: 0.9rem;
+    }
+    .title {
+        font-size: 1em;
+    }
+    .top-menu__group:first-child {
+        display: none;
+    }
+    .read-more:not(.read-more--text) {
+        display: none;
+    }
+    .list {
+        max-width: 70vw;
+    }
+    .form__close {
+        position: static;
+    }
+
+    .brands__slider, .devices__slider {
+        height: auto;
+    }
+
+    .table {
+        display: flex;
+        max-width: 70vw;
+        >* {
+            display: block;
+        }
+        &__header {
+            display: none;
+        }
+        &__body {
+            display: flex;
+        }
+        &__row {
+            display: flex;
+            flex-wrap: wrap;
+            width: 260px;
+            min-height: 220px;
+            border: 1px solid #eaeaea;
+            border-radius: 8px;
+            margin: 0 0.5em;
+        }
+        &__cell {
+            display: block;
+            padding: 10px;
+            border: none;
+            &:not(:nth-child(3)):not(:last-child) {
+                width: 100%;
+            }
+            &:last-child {
+                margin-left: auto;
+            }
+            &::before {
+                display: block;
+            }
+        }
+    }
+}
+
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 360px){
+    .top-menu {
+        font-size: 0.3rem;
+    }
+    .navbar {
+        width: 100%;
+    }
+    .links__item {
+    }
+    .form {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width : 440px){
+    .form {
+        width: 100%;
+    }
+}
+	/**/
+
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px){
+    .list {
+        -ms-grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        -ms-grid-template-rows: 70px 70px;
+        -ms-grid-auto-columns: initial;
+        -ms-grid-auto-flow: initial;
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        grid-template-rows: 70px 70px;
+        grid-auto-columns: initial;
+        grid-auto-flow: initial;
+        &--large {
+            grid-template-rows: 160px 160px;
+        }
+    }
+    .swiper-pagination {
+        display: none;
+    }
+}
+	// 
+
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 1120px){
+    .navigation {
+        flex-wrap: wrap;
+    }
+}

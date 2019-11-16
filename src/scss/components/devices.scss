@@ -1,0 +1,16 @@
+.devices {
+    padding: $content-padding;
+    overflow: hidden;
+    &__slider {
+        overflow: hidden;
+        padding: 0.5em;
+        height: 170px;
+    }
+    &__pagination {
+        position: static;
+        margin-top: 1em;
+    }
+    &__read-more {
+        margin-top: 2em;
+    }
+}

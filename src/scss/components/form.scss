@@ -1,0 +1,44 @@
+.form {
+    position: relative;
+    min-width: 320px;
+    min-height: 100%;
+    background-color: white;
+    padding: $content-padding;
+    width: 440px;
+
+    &__close {
+        position: absolute;
+        left: -70px;
+        margin-bottom: 1.5em;
+    }
+
+    &__title {
+        margin-bottom: 1em;
+        padding-left: 0.85em;
+        margin-left: -0.85em;
+        border-left: 3px solid $blue-color;
+    }
+    &__text-group {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    &__text {
+        flex-grow: 1;
+        flex-basis: 100%;
+        padding: 0.8em;
+        margin-bottom: 1em;
+        border-radius: 10px;
+        border: 1px solid $border-color;
+        &--large {
+            resize: none;
+            height: 100px;
+        }
+    }
+    &__submit {
+        margin-top: 2em;
+        margin-left: auto;
+    }
+    &__link {
+        color: $icon-color;
+    }
+}

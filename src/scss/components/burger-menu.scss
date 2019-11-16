@@ -1,0 +1,41 @@
+@mixin strip(){
+    position: absolute;
+    width: 20px;
+    height: 2px;
+    top: 50%; margin-top: -1px;
+    left: 50%; margin-left: -10px;
+    background-color: white;
+    transition: all .25s;
+}
+
+@mixin strip_anim($deg, $anim_start){
+	transform-origin: $anim_start;
+	transform: rotate($deg);
+	width: 10px;
+}
+
+.burger {
+    &__strip {
+        position: relative;
+        @include strip();
+        &::before {
+            content: "";
+            @include strip();
+            display: block;
+            transform: translateY(-5px);
+        }
+        &::after {
+            content: "";
+            @include strip();
+            display: block;
+            transform: translateY(5px);
+        }
+    }
+
+    &:hover {
+        .burger__strip, .burger__strip::after, .burger__strip::before {
+            background-color: $icon-color;
+        }
+    }
+
+}

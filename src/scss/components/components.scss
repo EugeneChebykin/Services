@@ -1,0 +1,126 @@
+.card {
+    padding: 10px;
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 6px;
+    background-color: white;
+    transition: all .2s;
+
+    &--large {
+        height: 160px;
+        .card {
+            &__text{
+                font-weight: 500;
+                align-self: flex-start;
+                flex-basis: 100%;
+            }
+            &__link {
+                align-self: flex-end;
+                margin-left: auto;
+            }
+        }
+    }
+    
+    &:hover {
+        box-shadow: 0 0 0 3px $icon-color;
+    }
+}
+
+.icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: $icon-color;
+    cursor: pointer;
+    transition: all .3s;
+
+    &:hover{
+        background-color: #fff;
+        box-shadow: 0 0 0 2px $icon-color;
+        .icon__path {
+            transition: all .3s;
+            fill: $icon-color;
+        }
+    }
+}
+
+.button {
+    width: 120px;
+    font-size: 0.7em;
+    border-radius: 16px;
+    text-transform: uppercase;
+    background-color: $icon-color;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    transition: all .25s;
+    display: flex;
+    justify-content: space-around;
+
+    &:hover {
+        box-shadow: 0 0 0 2px $icon-color;
+        color: $icon-color;
+        background-color: white;
+
+        .order-button__img {
+            transition: all .25s;
+            fill: $icon-color;
+        }
+    }
+}
+
+.overlay--active {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: white;
+    opacity: 0.7;
+    z-index: 20;
+}
+
+.read-more {
+    border: none;
+    background-color: transparent;
+    font-weight: 500;
+    &:hover {
+        cursor: pointer;
+    }
+
+    &__img {
+        padding-right: 1em;
+    }
+}
+
+.title {
+    background: linear-gradient(-270deg, #F8F8F8 0%, #FFFFFF 98.61%);
+    text-transform: uppercase;
+    font-weight: normal;
+    margin-bottom: 1em;
+    padding: 1em 0;
+    color: $text-color;
+}
+
+@mixin modal($direction) {
+    .modal{
+        position: absolute;
+        transition: .25s;
+        opacity: 0;
+        $direction: -100%;
+        z-index: 100;
+        &--active{
+            position: fixed;
+            $direction: 0;
+            opacity: 1;
+            box-shadow: 
+            16px 0px 52px rgba(14, 24, 80, 0.2), 
+            -2px 0px 4px rgba(69, 79, 126, 0.02);
+        }
+    }
+}

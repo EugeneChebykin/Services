@@ -1,0 +1,64 @@
+@import "./node_modules/normalize.css/normalize";
+@import "../../node_modules/swiper/css/swiper.min.css";
+
+@import "vars";
+@import "fonts";
+
+
+@import "components/components";
+@import "components/navbar";
+@import "components/top-menu";
+@import "components/burger-menu";
+@import "components/brands";
+@import "components/services";
+@import "components/devices";
+@import "components/prices";
+@import "components/footer";
+@import "components/form";
+@import "components/modal";
+
+@import "media";
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 1rem;
+}
+
+html, body {
+    font-family: TTLakes;
+    height: auto;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    overflow-x: hidden;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+button {
+    border: none;
+}
+
+main {
+    max-width: 1120px;
+    background-color: $page-bg-color;
+}
