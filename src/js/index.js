@@ -1,5 +1,5 @@
 import '../scss/style.scss';
-import Swiper from 'swiper';
+import Swiper from 'swiper/js/swiper.js';
 import 'babel-polyfill';
 
 console.log('Works!');
@@ -45,6 +45,7 @@ function bindSliders() {
 
     let sliderConf = {
         slidesPerView: 'auto',
+        direction: 'horizontal',
     };
 
 
@@ -53,20 +54,23 @@ function bindSliders() {
     }
 
     if(window.innerWidth <= 768) {
-        let brandsNavSlider = new Swiper(brandsNav, Object.assign(sliderConf, {
+        let brandsNavSlider = new Swiper(brandsNav, Object.assign({}, sliderConf, {
             pagination: {
                 el: '.brands__pagination'
-            }
+            },
+            slidesOffsetAfter: 300
         }));
-        let devicesNavSlider = new Swiper(devicesNav, Object.assign(sliderConf, {
+        let devicesNavSlider = new Swiper(devicesNav, Object.assign({}, sliderConf, {
             pagination: {
                 el: '.devices__pagination'
-            }
+            },
+            slidesOffsetAfter: 100
         }));
-        let tableRowsSlider = new Swiper(tableRows, Object.assign(sliderConf, {
+        let tableRowsSlider = new Swiper(tableRows, Object.assign({}, sliderConf, {
             pagination: {
                 el: '.prices__pagination'
-            }
+            },
+            slidesOffsetAfter: -130
         }));
     }
 }
@@ -87,14 +91,12 @@ function toggleSearchInput() {
 
 function toggleShowMore() {
     const baseHeight = 170;
-    let content = Array.from(document.querySelector('.toggle-show')),
-        buttons = document.querySelectorAll('.read-more');
+    let buttons = Array.from(document.querySelectorAll('.read-more'));
 
     let currentState = 'short';
 
     buttons.forEach(button => {
         button.addEventListener('click', function() {
-            console.log(this);
             let className = this.getAttribute('data-toggle');
             let currentElem = document.querySelector(`.${className}`);
             toggle(currentState, currentElem, this);
@@ -133,7 +135,7 @@ class Modals {
     }
 
     closeAll() {
-        let allModals = document.querySelectorAll('.modal');
+        let allModals = Array.from(document.querySelectorAll('.modal'));
         allModals.forEach(modal => modal.classList.remove(`${this.modalsClassName}--active`));
         this.overlay.classList.remove('overlay--active');
         this.update();

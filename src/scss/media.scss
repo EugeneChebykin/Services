@@ -39,14 +39,9 @@
     .brands__slider, .devices__slider {
         height: auto;
     }
-    .links__item {
-        margin: 0.5em 0;
-        margin-left: -$navbar-padding;
-    }
 
     .table {
-        display: flex;
-        max-width: 70vw;
+        display: block;
         >* {
             display: block;
         }
@@ -55,6 +50,7 @@
         }
         &__body {
             display: flex;
+            max-width: 70vw;
         }
         &__row {
             display: flex;
@@ -90,8 +86,16 @@
     }
     .navbar {
         width: 100%;
+        &__email{
+            margin: 0.5em 0;
+        }
+        &__langs {
+            margin-top: 0.5em;
+        }
     }
     .links__item {
+        margin: 0.5em 0;
+        margin-left: -$navbar-padding;
     }
     .form {
         width: 100%;

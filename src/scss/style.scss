@@ -61,3 +61,12 @@ main {
     max-width: 1120px;
     background-color: $page-bg-color;
 }
+
+.swiper-pagination-bullet {
+    height: 12px;
+    width: 12px;
+    background-color: #DDDDDD;
+    &-active {
+        background-color: #B5B6BC;
+    }
+}
