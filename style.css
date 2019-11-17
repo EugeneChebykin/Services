@@ -707,7 +707,6 @@ template {
     margin: 1.5em 0; }
   .prices__pagination {
     position: static;
-    display: block;
     margin-top: 1em; }
   .prices__link {
     font-size: 1.1em;
@@ -848,18 +847,15 @@ template {
     position: static; }
   .brands__slider, .devices__slider {
     height: auto; }
-  .links__item {
-    margin: 0.5em 0;
-    margin-left: -1.5em; }
   .table {
-    display: flex;
-    max-width: 70vw; }
+    display: block; }
     .table > * {
       display: block; }
     .table__header {
       display: none; }
     .table__body {
-      display: flex; }
+      display: flex;
+      max-width: 70vw; }
     .table__row {
       display: flex;
       flex-wrap: wrap;
@@ -885,6 +881,13 @@ template {
     font-size: 0.3rem; }
   .navbar {
     width: 100%; }
+    .navbar__email {
+      margin: 0.5em 0; }
+    .navbar__langs {
+      margin-top: 0.5em; }
+  .links__item {
+    margin: 0.5em 0;
+    margin-left: -1.5em; }
   .form {
     width: 100%; } }
 
@@ -952,6 +955,13 @@ button {
 main {
   max-width: 1120px;
   background-color: #F8F8F8; }
+
+.swiper-pagination-bullet {
+  height: 12px;
+  width: 12px;
+  background-color: #DDDDDD; }
+  .swiper-pagination-bullet-active {
+    background-color: #B5B6BC; }
 
 
 /*# sourceMappingURL=style.css.map*/
