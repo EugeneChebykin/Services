@@ -50,17 +50,16 @@
         align-items: center;
         padding: 2px;
         overflow: hidden;
-        position: relative;
         border-radius: 50px;
         position: absolute;
-        right: 1em;
+        right: 0;
     }
 
     &__text {
         border: 2px solid $icon-color;
         padding: 3px;
         margin-right: -40px;
-        width: 250px;
+        width: 225px;
         height: 40px;
         border-radius: 50px;
         transition: .25s;
@@ -88,6 +87,7 @@
     }
 
     &__header {
+        position: relative;
         display: flex;
         align-items: center;
     }
