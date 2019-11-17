@@ -28,6 +28,16 @@ window.onload = function() {
     }
 }
 
+function preventWindowScroll(type) {
+    if(window.innerWidth <= 768) {
+        if(type == true) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'visible';
+        }
+    } 
+}
+
 function InitializeNavbarModal() {
     let navbar = document.querySelector('.navbar');
         if(window.innerWidth <= 1120) {
@@ -130,23 +140,49 @@ class Modals {
         this.init();
     }
 
-    update() {
-        this.modals = Array.from(document.querySelectorAll(`.${this.modalsClassName}`));
-    }
+    // update() {
+    //     this.modals = Array.from(document.querySelectorAll(`.${this.modalsClassName}`));
+    // }
 
     closeAll() {
         let allModals = Array.from(document.querySelectorAll('.modal'));
-        allModals.forEach(modal => modal.classList.remove(`${this.modalsClassName}--active`));
+
+        //allModals.forEach(modal => modal.classList.remove(`${this.modalsClassName}--active`));
+        //allModals.forEach(modal => modal.classList.remove('modal--active'));
+
+        //Проходимся циклом по всем модалкам
+        allModals.forEach(modal => {
+            //Проходимся циклом по всем классам каждой модалки
+            modal.classList.forEach(className => {
+                //Проверяем, содержит ли имя класса модификатор active
+                if(className.indexOf('--active') != -1) {
+                    //Если да, удаляем этот класс у модалки
+                    modal.classList.remove(className);
+                }
+            })
+        })
         this.overlay.classList.remove('overlay--active');
-        this.update();
+
+        preventWindowScroll();
+
+        //Эта функция обновляет список модалок. Так как модалка бокового меню инициализируется
+        //только если ширина экрана < 1120px, могут возникнуть проблемы и, если 
+        //изначально открыть страницу в большем разрешении и затем уменьшить его, то модалка
+        //не будет работать, так как класс Modals инициализируется при window.onload
+        //this.update();
     }
 
     open(className) {
         this.closeAll();
+
         let [ currentModal ] = this.modals.filter(modal => modal.classList.contains(className));
+
         this.overlay.addEventListener('click', () => this.closeAll());
         currentModal.classList.add(`${this.modalsClassName}--active`);
+        currentModal.classList.add('modal--active');
         this.overlay.classList.add('overlay--active');
+
+        preventWindowScroll(true);
     }
 
     bindOpen() {
