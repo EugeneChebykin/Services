@@ -1,6 +1,6 @@
 .services {
     padding: $content-padding;
-    max-width: 1120px;
+    max-width: 100vw;
     &__header{
         display: flex;
         flex-wrap: wrap;
@@ -29,7 +29,7 @@
     }
 
     &__hide {
-        height: 170px;
+        height: 98px;
         overflow: hidden;
     }
 
@@ -54,6 +54,7 @@
         justify-content: center;
         &__img {
             img {
+                max-width: 90vw; //for ie11
                 border-radius: .5em;
             }
         }

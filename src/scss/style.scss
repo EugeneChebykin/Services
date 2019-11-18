@@ -27,6 +27,7 @@
 
 :root {
     font-size: 1rem;
+    //font-size: calc(0.5em + 1vw);
 }
 
 html, body {
@@ -56,7 +57,9 @@ img {
 button {
     border: none;
 }
-
+.container {
+    max-width: 100vw;
+}
 main {
     display: block;
     max-width: 1120px;

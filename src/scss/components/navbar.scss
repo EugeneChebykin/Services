@@ -2,7 +2,9 @@
     margin: 1.5em 0;
     font-weight: 500;
     &__item {
+        -ms-display: flex;
         display: flex;
+        -ms-align-items: center;
         align-items: center;
         height: 2em;
         margin: 1em 0;
@@ -37,8 +39,10 @@
     background-color: white;
 
     &__container {
+        -ms-display: flex;
         display: flex;
         padding: $navbar-padding;
+        -ms-flex-direction: column;
         flex-direction: column;
         position: fixed;
         height: 100vh;
@@ -46,7 +50,9 @@
     }
 
     &__search {
+        -ms-display: flex;
         display: flex;
+        -ms-align-items: center;
         align-items: center;
         padding: 2px;
         overflow: hidden;
@@ -88,16 +94,20 @@
 
     &__header {
         position: relative;
+        -ms-display: flex;
         display: flex;
+        -ms-align-items: center;
         align-items: center;
     }
 
     &__logo {
+        -ms-flex-grow: 1;
         flex-grow: 1;
         //padding-left: 1em;
     }
 
     &__content {
+        -ms-flex-grow: 0.5;
         flex-grow: 0.5;
     }
 

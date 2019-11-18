@@ -24,14 +24,8 @@
     .title {
         font-size: 1em;
     }
-    .top-menu__group:first-child {
-        display: none;
-    }
     .read-more:not(.read-more--text) {
         display: none;
-    }
-    .list {
-        max-width: 70vw;
     }
     .form__close {
         position: static;
@@ -39,9 +33,17 @@
     .brands__slider, .devices__slider {
         height: auto;
     }
+    .list {
+        flex-wrap: nowrap;
+    }
+    .footer__item {
+        flex-basis: 100%;
+        text-align: center;
+    }
 
     .table {
         display: block;
+        max-width: 100vw;
         >* {
             display: block;
         }
@@ -50,7 +52,6 @@
         }
         &__body {
             display: flex;
-            max-width: 70vw;
         }
         &__row {
             display: flex;
@@ -78,6 +79,24 @@
     }
 }
 
+@media only screen and (max-width : 570px){
+    .modal {
+        overflow-y: auto;
+    }
+    .form {
+        min-width: 360px;
+    }
+    .top-menu__group:first-child {
+        display: none;
+    }
+}
+
+@media only screen and (max-height : 500px){
+    .modal {
+        overflow-y: auto;
+    }
+}
+
 
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 360px){
@@ -101,7 +120,7 @@
         margin-left: -$navbar-padding;
     }
     .form {
-        width: 100%;
+        min-width: 100%;
         &__close {
             margin-bottom: 0.5em;
         }
@@ -121,19 +140,6 @@
 
 /* Small Devices, Tablets */
 @media only screen and (min-width : 768px){
-    .list {
-        -ms-grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-        -ms-grid-template-rows: 70px 70px;
-        -ms-grid-auto-columns: initial;
-        -ms-grid-auto-flow: initial;
-        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-        grid-template-rows: 70px 70px;
-        grid-auto-columns: initial;
-        grid-auto-flow: initial;
-        &--large {
-            grid-template-rows: 160px 160px;
-        }
-    }
     .swiper-pagination {
         display: none;
     }

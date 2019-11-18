@@ -7,6 +7,9 @@
     border-radius: 6px;
     background-color: white;
     transition: all .2s;
+    &__link {
+        height: 40px;
+    }
 
     &--large {
         height: 160px;
@@ -19,6 +22,7 @@
             &__link {
                 align-self: flex-end;
                 margin-left: auto;
+                border-radius: 50%;
             }
         }
     }
@@ -51,7 +55,7 @@
 
 .button {
     width: 120px;
-    font-size: 0.7em;
+    font-size: 0.8em;
     border-radius: 16px;
     text-transform: uppercase;
     background-color: $icon-color;
@@ -121,6 +125,29 @@
             box-shadow: 
             16px 0px 52px rgba(14, 24, 80, 0.2), 
             -2px 0px 4px rgba(69, 79, 126, 0.02);
+        }
+    }
+}
+
+.list {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    &__item {
+        height: 70px;
+        flex-basis: 200px;
+        flex-grow: 1;
+        margin: 0.5em 1em;
+    }
+    i {
+        height: 70px;
+        flex-basis: 200px;
+        flex-grow: 1;
+        margin: 0.5em 1em;
+    }
+    &--large {
+        .list__item {
+            height: 160px;
         }
     }
 }

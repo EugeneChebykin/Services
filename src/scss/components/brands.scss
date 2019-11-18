@@ -4,6 +4,7 @@ $icon-color: #FF3E79;
 .brands {
     padding: $content-padding;
     overflow: hidden;
+    max-width: 100vw;
 
     &__read-more {
         margin-top: 2em;
@@ -11,33 +12,10 @@ $icon-color: #FF3E79;
 
     &__slider {
         overflow: hidden;
-        padding: 1em;
-        height: 170px;
+        height: 180px;
     }
     &__pagination {
         position: static;
         margin-top: 1em;
-    }
-    &__footer {
-        margin-top: 10em;
-    }
-}
-
-.list {
-    -ms-display: grid;
-    -ms-grid-gap: 0.5em 1.5em;
-    -ms-grid-auto-columns: minmax(210px, 240px);
-    -ms-grid-template-rows: 60px;
-    -ms-grid-template-rows: 60px;
-    -ms-grid-auto-flow: column;
-    display: grid;
-    grid-gap: 0.5em 1.5em;
-    grid-auto-columns: minmax(210px, 240px);
-    grid-template-rows: 60px;
-    grid-auto-flow: column;
-
-    &--large {
-        -ms-grid-template-rows: minmax(140px, 160px);
-        grid-template-rows: minmax(140px, 160px);
     }
 }

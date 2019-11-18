@@ -3,6 +3,7 @@
     //display: flex;
     align-items: center;
     padding: $content-padding;
+    max-width: 100vw;
     &__burger-button {
         position: relative;
         margin-right: 1.5em;

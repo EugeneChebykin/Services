@@ -5,9 +5,10 @@
     transform-origin: left center;
     transform: translateX(-100%);
     opacity: 0;
-    z-index: 100;
+    z-index: -100;
     &--active{
         position: fixed;
+        z-index: 100;
         transform-origin: left center;
         transform: translateX(0);
         opacity: 1;
@@ -23,6 +24,7 @@
     transform-origin: right center;
     transform: translateX(100%);
     opacity: 0;
+    width: 0;
     z-index: 100;
     &--active{
         position: fixed;

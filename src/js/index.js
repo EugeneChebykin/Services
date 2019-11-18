@@ -31,9 +31,9 @@ window.onload = function() {
 function preventWindowScroll(type) {
     if(window.innerWidth <= 768) {
         if(type == true) {
-            document.body.style.overflow = 'hidden';
+            document.body.style.overflowY = 'hidden';
         } else {
-            document.body.style.overflow = 'visible';
+            document.body.style.overflowY = 'visible';
         }
     } 
 }
@@ -63,24 +63,21 @@ function bindSliders() {
         let servicesNavSlider = new Swiper(servicesNav, sliderConf);
     }
 
-    if(window.innerWidth <= 768) {
+    if(window.innerWidth < 768) {
         let brandsNavSlider = new Swiper(brandsNav, Object.assign({}, sliderConf, {
             pagination: {
                 el: '.brands__pagination'
-            },
-            slidesOffsetAfter: 300
+            }
         }));
         let devicesNavSlider = new Swiper(devicesNav, Object.assign({}, sliderConf, {
             pagination: {
                 el: '.devices__pagination'
-            },
-            slidesOffsetAfter: 100
+            }
         }));
         let tableRowsSlider = new Swiper(tableRows, Object.assign({}, sliderConf, {
             pagination: {
                 el: '.prices__pagination'
-            },
-            slidesOffsetAfter: -130
+            }
         }));
     }
 }
@@ -101,6 +98,7 @@ function toggleSearchInput() {
 
 function toggleShowMore() {
     const baseHeight = 170;
+    const textHeight = 98;
     let buttons = Array.from(document.querySelectorAll('.read-more'));
 
     let currentState = 'short';
@@ -122,11 +120,30 @@ function toggleShowMore() {
             currentState = 'full'
         } 
         if(type === "full") {
-            elem.style.height = `${baseHeight}px`;
+            if(elem.classList.contains('services__hide')) {
+                btn.children[1].innerHTML= "Читать далее";
+                elem.style.height = `${textHeight}px`;
+            } else {
+                btn.children[1].innerHTML= `Показать всё(${countChildren(elem)})`;
+                elem.style.height = `${baseHeight + 10}px`;
+            }
             btn.children[0].src = 'img/arrow-down.png';
-            btn.children[1].innerHTML= "Показать всё";
+            
             currentState = 'short';
         }
+    }
+
+    function countChildren(elem) {
+        let list = elem.querySelector('.list');
+        let count = 0;
+
+        Array.from(list.children).forEach(child => {
+            if(child.tagName == 'DIV') {
+                count++;
+            }
+        });
+
+        return count;
     }
 }
 
@@ -152,18 +169,19 @@ class Modals {
 
         //Проходимся циклом по всем модалкам
         allModals.forEach(modal => {
+            let classList = Array.from(modal.classList);
             //Проходимся циклом по всем классам каждой модалки
-            modal.classList.forEach(className => {
+            classList.forEach(className => {
                 //Проверяем, содержит ли имя класса модификатор active
                 if(className.indexOf('--active') != -1) {
                     //Если да, удаляем этот класс у модалки
                     modal.classList.remove(className);
                 }
-            })
-        })
+            });
+        });
         this.overlay.classList.remove('overlay--active');
 
-        preventWindowScroll();
+        //preventWindowScroll();
 
         //Эта функция обновляет список модалок. Так как модалка бокового меню инициализируется
         //только если ширина экрана < 1120px, могут возникнуть проблемы и, если 
@@ -182,7 +200,7 @@ class Modals {
         currentModal.classList.add('modal--active');
         this.overlay.classList.add('overlay--active');
 
-        preventWindowScroll(true);
+        //preventWindowScroll(true);
     }
 
     bindOpen() {

@@ -1,11 +1,10 @@
 .form {
     position: absolute;
     right: 0;
-    min-width: 320px;
     min-height: 100%;
     background-color: white;
     padding: $content-padding;
-    width: 440px;
+    min-width: 440px;
 
     &__close {
         position: absolute;
