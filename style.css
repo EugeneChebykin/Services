@@ -907,6 +907,8 @@ template {
 
 @media only screen and (max-height: 500px) {
   .modal {
+    overflow-y: auto; }
+  .form {
     overflow-y: auto; } }
 
 /* Custom, iPhone Retina */
