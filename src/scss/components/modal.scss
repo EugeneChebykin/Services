@@ -1,7 +1,7 @@
 .modal-navbar {
     transition: all .35s;
     @media only screen and (max-width : 1120px){
-        position: fixed;
+        position: absolute;
         left: 0;
         transform-origin: left center;
         transform: translateX(-100%);

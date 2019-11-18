@@ -1,5 +1,4 @@
 @media only screen and (max-width : 1120px){
-    
     .top-menu {
         display: flex;
     }
@@ -96,12 +95,12 @@
 @media only screen and (max-height : 700px){
     .modal {
         overflow-y: auto;
+        overflow-x: hidden;
     }
     .form__close {
         position: static;
     }
     .navbar__container {
-        position: absolute;
         overflow-y: auto;
     }
 }
