@@ -819,7 +819,7 @@ template {
   transition: all .35s; }
   @media only screen and (max-width: 1120px) {
     .modal-navbar {
-      position: fixed;
+      position: absolute;
       left: 0;
       transform-origin: left center;
       transform: translateX(-100%);
@@ -967,11 +967,11 @@ main {
 
 @media only screen and (max-height: 700px) {
   .modal {
-    overflow-y: auto; }
+    overflow-y: auto;
+    overflow-x: hidden; }
   .form__close {
     position: static; }
   .navbar__container {
-    position: absolute;
     overflow-y: auto; } }
 
 /* Custom, iPhone Retina */
