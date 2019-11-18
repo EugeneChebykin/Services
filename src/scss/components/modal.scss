@@ -1,16 +1,17 @@
 .modal-navbar {
     transition: all .35s;
     @media only screen and (max-width : 1120px){
+        position: fixed;
+        left: 0;
         transform-origin: left center;
         transform: translateX(-100%);
         opacity: 0;
-        z-index: -100;
         .navbar__close {
             display: inline-flex;
         }
     }
     &--active{
-        z-index: 100;
+        z-index: 110;
         transform-origin: left center;
         transform: translateX(0);
         opacity: 1;
