@@ -474,7 +474,6 @@ template {
     color: #9497a7; }
 
 .navbar {
-  position: relative;
   min-width: 320px;
   min-height: 100%;
   background-color: white; }
@@ -668,9 +667,9 @@ template {
     display: flex;
     flex-wrap: wrap;
     justify-content: center; }
-    .services__content__img img {
-      max-width: 90vw;
-      border-radius: .5em; }
+  .services__img {
+    max-width: 90vw;
+    border-radius: .5em; }
 
 .navigation {
   display: flex;
@@ -783,11 +782,14 @@ template {
   min-height: 100%;
   background-color: white;
   padding: 1.3em;
-  min-width: 440px; }
+  min-width: 440px;
+  height: 100%;
+  overflow-x: visible; }
   .form__close {
     position: absolute;
     left: -70px;
-    margin-bottom: 1.5em; }
+    margin-bottom: 1.5em;
+    z-index: 100; }
   .form__title {
     margin-bottom: 1em;
     padding-left: 0.85em;
@@ -813,13 +815,18 @@ template {
     color: #FF3E79; }
 
 .modal-navbar {
-  position: absolute;
-  left: 0;
-  transition: all .35s;
-  transform-origin: left center;
-  transform: translateX(-100%);
-  opacity: 0;
-  z-index: -100; }
+  position: static;
+  transition: all .35s; }
+  @media only screen and (max-width: 1120px) {
+    .modal-navbar {
+      position: absolute;
+      left: 0;
+      transform-origin: left center;
+      transform: translateX(-100%);
+      opacity: 0;
+      z-index: -100; }
+      .modal-navbar .navbar__close {
+        display: inline-flex; } }
   .modal-navbar--active {
     position: fixed;
     z-index: 100;
@@ -897,8 +904,6 @@ main {
     background-color: #B5B6BC; }
 
 @media only screen and (max-width: 1120px) {
-  .navbar__close {
-    display: block; }
   .top-menu {
     display: flex; }
   .services__icons {
@@ -930,8 +935,6 @@ main {
   .table {
     display: block;
     max-width: 100vw; }
-    .table > * {
-      display: block; }
     .table__header {
       display: none; }
     .table__body {
@@ -957,15 +960,20 @@ main {
 
 @media only screen and (max-width: 570px) {
   .modal {
-    overflow-y: auto; }
+    overflow-y: auto;
+    overflow-x: hidden; }
   .form {
     min-width: 360px; }
   .top-menu__group:first-child {
     display: none; } }
 
-@media only screen and (max-height: 500px) {
+@media only screen and (max-height: 700px) {
   .modal {
-    overflow-y: auto; } }
+    overflow-y: auto; }
+  .form__close {
+    position: static; }
+  .navbar__container {
+    position: absolute; } }
 
 /* Custom, iPhone Retina */
 @media only screen and (max-width: 360px) {
