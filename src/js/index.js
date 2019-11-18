@@ -6,7 +6,7 @@ console.log('Works!');
 
 window.onload = function() {
     bindSliders();
-    InitializeNavbarModal();
+    //InitializeNavbarModal();
     toggleShowMore();
     toggleSearchInput();
     submitHandler();
@@ -25,7 +25,7 @@ window.onload = function() {
         overlay: '.overlay'
     });
     window.onresize = function() {
-        InitializeNavbarModal();
+        //InitializeNavbarModal();
     }
 }
 
@@ -46,14 +46,14 @@ function preventWindowScroll(type) {
     } 
 }
 
-function InitializeNavbarModal() {
-    let navbar = document.querySelector('.navbar');
-        if(window.innerWidth <= 1120) {
-            navbar.classList.add('modal-navbar');
-        } else {
-            navbar.classList.remove('modal-navbar');
-        }
-}
+// function InitializeNavbarModal() {
+//     let navbar = document.querySelector('.navbar');
+//         if(window.innerWidth <= 1120) {
+//             navbar.classList.add('modal-navbar');
+//         } else {
+//             navbar.classList.remove('modal-navbar');
+//         }
+// }
 
 function bindSliders() {
     let servicesNav = '.services__slider',

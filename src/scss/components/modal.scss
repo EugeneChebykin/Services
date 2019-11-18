@@ -1,11 +1,18 @@
+
 .modal-navbar {
-    position: absolute;
-    left: 0;
+    position: static;
     transition: all .35s;
-    transform-origin: left center;
-    transform: translateX(-100%);
-    opacity: 0;
-    z-index: -100;
+    @media only screen and (max-width : 1120px){
+        position: absolute;
+        left: 0;
+        transform-origin: left center;
+        transform: translateX(-100%);
+        opacity: 0;
+        z-index: -100;
+        .navbar__close {
+            display: inline-flex;
+        }
+    }
     &--active{
         position: fixed;
         z-index: 100;

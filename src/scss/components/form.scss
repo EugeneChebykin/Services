@@ -5,11 +5,14 @@
     background-color: white;
     padding: $content-padding;
     min-width: 440px;
+    height: 100%;
+    overflow-x: visible;
 
     &__close {
         position: absolute;
         left: -70px;
         margin-bottom: 1.5em;
+        z-index: 100;
     }
 
     &__title {

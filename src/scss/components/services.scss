@@ -52,12 +52,10 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        &__img {
-            img {
-                max-width: 90vw; //for ie11
-                border-radius: .5em;
-            }
-        }
+    }
+    &__img {
+        max-width: 90vw; //for ie11
+        border-radius: .5em;
     }
 }
 
