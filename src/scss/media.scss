@@ -43,6 +43,9 @@
         flex-basis: 100%;
         text-align: center;
     }
+    .swiper-pagination {
+        display: block;
+    }
 
     .table {
         display: block;
@@ -138,16 +141,3 @@
         width: 100%;
     }
 }
-	/**/
-
-
-/* Small Devices, Tablets */
-@media only screen and (min-width : 768px){
-    .swiper-pagination {
-        display: none;
-    }
-}
-	// 
-
-
-

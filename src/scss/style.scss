@@ -17,7 +17,6 @@
 @import "components/form";
 @import "components/modal";
 
-@import "media";
 
 * {
     padding: 0;
@@ -66,6 +65,10 @@ main {
     background-color: $page-bg-color;
 }
 
+.swiper-pagination {
+    display: none;
+}
+
 .swiper-pagination-bullet {
     height: 12px;
     width: 12px;
@@ -74,3 +77,5 @@ main {
         background-color: $pagination-bullet-color-hover;
     }
 }
+
+@import "media";
