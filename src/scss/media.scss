@@ -13,6 +13,9 @@
     .prices__footer {
         max-width: 100%;
     }
+    .navigation {
+        flex-wrap: nowrap;
+    }
 }
 
 
@@ -95,9 +98,6 @@
     .modal {
         overflow-y: auto;
     }
-    .form {
-        overflow-y: auto;
-    }
 }
 
 
@@ -150,9 +150,4 @@
 	// 
 
 
-/* Medium Devices, Desktops */
-@media only screen and (min-width : 1120px){
-    .navigation {
-        flex-wrap: wrap;
-    }
-}
+

@@ -63,6 +63,7 @@
 
 .navigation {
     display: flex;
+    flex-wrap: wrap;
     &__item {
         width: auto;
         display: block;

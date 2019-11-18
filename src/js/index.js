@@ -9,6 +9,7 @@ window.onload = function() {
     InitializeNavbarModal();
     toggleShowMore();
     toggleSearchInput();
+    submitHandler();
 
     let modalMenu = new Modals({
         modals: '.modal-navbar',
@@ -26,6 +27,13 @@ window.onload = function() {
     window.onresize = function() {
         InitializeNavbarModal();
     }
+}
+
+function submitHandler(e) {
+    let forms = Array.from(document.querySelectorAll('.form'));
+    forms.forEach(form => {
+        form.addEventListener('submit', (e) => e.preventDefault());
+    });
 }
 
 function preventWindowScroll(type) {
@@ -163,9 +171,6 @@ class Modals {
 
     closeAll() {
         let allModals = Array.from(document.querySelectorAll('.modal'));
-
-        //allModals.forEach(modal => modal.classList.remove(`${this.modalsClassName}--active`));
-        //allModals.forEach(modal => modal.classList.remove('modal--active'));
 
         //Проходимся циклом по всем модалкам
         allModals.forEach(modal => {
