@@ -483,7 +483,8 @@ template {
     padding: 1.5em;
     -ms-flex-direction: column;
     flex-direction: column;
-    position: fixed;
+    position: sticky;
+    top: 0;
     height: 100vh;
     min-width: 320px; }
   .navbar__search {
@@ -815,12 +816,9 @@ template {
     color: #FF3E79; }
 
 .modal-navbar {
-  position: static;
   transition: all .35s; }
   @media only screen and (max-width: 1120px) {
     .modal-navbar {
-      position: absolute;
-      left: 0;
       transform-origin: left center;
       transform: translateX(-100%);
       opacity: 0;
@@ -828,7 +826,6 @@ template {
       .modal-navbar .navbar__close {
         display: inline-flex; } }
   .modal-navbar--active {
-    position: fixed;
     z-index: 100;
     transform-origin: left center;
     transform: translateX(0);
