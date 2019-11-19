@@ -819,7 +819,7 @@ template {
   transition: all .35s; }
   @media only screen and (max-width: 1120px) {
     .modal-navbar {
-      position: absolute;
+      position: fixed;
       left: 0;
       transform-origin: left center;
       transform: translateX(-100%);
@@ -966,9 +966,8 @@ main {
     display: none; } }
 
 @media only screen and (max-height: 700px) {
-  .modal {
-    overflow-y: auto;
-    overflow-x: hidden; }
+  .form {
+    overflow-y: auto; }
   .form__close {
     position: static; }
   .navbar__container {
