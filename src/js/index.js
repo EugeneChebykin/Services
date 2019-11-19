@@ -74,17 +74,20 @@ function bindSliders() {
     if(window.innerWidth < 768) {
         let brandsNavSlider = new Swiper(brandsNav, Object.assign({}, sliderConf, {
             pagination: {
-                el: '.brands__pagination'
+                el: '.brands__pagination',
+                clickable: 'true'
             }
         }));
         let devicesNavSlider = new Swiper(devicesNav, Object.assign({}, sliderConf, {
             pagination: {
-                el: '.devices__pagination'
+                el: '.devices__pagination',
+                clickable: 'true'
             }
         }));
         let tableRowsSlider = new Swiper(tableRows, Object.assign({}, sliderConf, {
             pagination: {
-                el: '.prices__pagination'
+                el: '.prices__pagination',
+                clickable: 'true'
             }
         }));
     }
