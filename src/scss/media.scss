@@ -93,9 +93,8 @@
 }
 
 @media only screen and (max-height : 700px){
-    .modal {
+    .form {
         overflow-y: auto;
-        overflow-x: hidden;
     }
     .form__close {
         position: static;
