@@ -47,6 +47,6 @@
     "babel-polyfill": "^6.26.0",
     "normalize.css": "^8.0.1",
     "slick-carousel": "^1.8.1",
-    "swiper": "^5.2.0"
+    "swiper": "^6.5.1"
   }
 }
