@@ -15,7 +15,7 @@
 ## Usage
 ##### Clone this repository
 ```
-git clone https://github.com/alex-karo/webpack-static-template PROJECT-NAME
+git clone https://github.com/EugeneChebykin/Services.git PROJECT-NAME
 cd PROJECT-NAME
 ```
 ##### Install npm 
